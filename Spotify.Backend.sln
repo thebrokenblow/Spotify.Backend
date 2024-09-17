@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35013.160
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Core", "Core", "{49398CC2-E147-4171-8DA8-BA96B8D986E7}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{69B9AA53-E15F-4B16-AAB8-0158953C6353}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Presentation", "Presentation", "{7956557D-A5F5-4A69-9307-119CE4812B1B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{C08601F1-4A25-491F-BCF6-B0336F3ABD33}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.Domain", "Spotify.Domain\Spotify.Domain.csproj", "{06D2D010-33CF-490D-910C-3A760CAEBC4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.Application", "Spotify.Application\Spotify.Application.csproj", "{B500A2A8-8007-4F7B-B7E0-46BC2FAD6144}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.Persistence", "Spotify.Persistence\Spotify.Persistence.csproj", "{23EB7951-0BFA-4DCB-884E-36AA69836266}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Spotify.WebApi", "Spotify.WebApi\Spotify.WebApi.csproj", "{91ABBC43-AD0F-472B-8A80-12E4208158AE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{06D2D010-33CF-490D-910C-3A760CAEBC4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{06D2D010-33CF-490D-910C-3A760CAEBC4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{06D2D010-33CF-490D-910C-3A760CAEBC4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{06D2D010-33CF-490D-910C-3A760CAEBC4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B500A2A8-8007-4F7B-B7E0-46BC2FAD6144}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B500A2A8-8007-4F7B-B7E0-46BC2FAD6144}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B500A2A8-8007-4F7B-B7E0-46BC2FAD6144}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B500A2A8-8007-4F7B-B7E0-46BC2FAD6144}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23EB7951-0BFA-4DCB-884E-36AA69836266}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EB7951-0BFA-4DCB-884E-36AA69836266}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EB7951-0BFA-4DCB-884E-36AA69836266}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EB7951-0BFA-4DCB-884E-36AA69836266}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91ABBC43-AD0F-472B-8A80-12E4208158AE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91ABBC43-AD0F-472B-8A80-12E4208158AE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91ABBC43-AD0F-472B-8A80-12E4208158AE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91ABBC43-AD0F-472B-8A80-12E4208158AE}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{06D2D010-33CF-490D-910C-3A760CAEBC4A} = {49398CC2-E147-4171-8DA8-BA96B8D986E7}
+		{B500A2A8-8007-4F7B-B7E0-46BC2FAD6144} = {49398CC2-E147-4171-8DA8-BA96B8D986E7}
+		{23EB7951-0BFA-4DCB-884E-36AA69836266} = {69B9AA53-E15F-4B16-AAB8-0158953C6353}
+		{91ABBC43-AD0F-472B-8A80-12E4208158AE} = {7956557D-A5F5-4A69-9307-119CE4812B1B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D48BFFB9-08E3-46BE-8EE7-15EFBBE58480}
+	EndGlobalSection
+EndGlobal
