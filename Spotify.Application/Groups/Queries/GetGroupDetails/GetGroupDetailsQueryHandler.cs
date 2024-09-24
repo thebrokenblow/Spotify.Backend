@@ -11,9 +11,16 @@ public class GetGroupDetailsQueryHandler(ISpotifyDbContext spotifyDbContext, IMa
 {
     public async Task<GroupDetailsVM> Handle(GetGroupDetailsQuery request, CancellationToken cancellationToken)
     {
-        var group = await spotifyDbContext.Groups
-            .FirstOrDefaultAsync(group => group.Id == request.Id, cancellationToken)
-            ?? throw new NotFoundException(nameof(Group), request.Id);
+        Group? group = null;
+        foreach (var item in spotifyDbContext.Groups)
+        {
+            if (item.Id == request.Id)
+            {
+                group = item;
+                break;
+            }
+        }
+
 
         return mapper.Map<GroupDetailsVM>(group);
     }

@@ -3,6 +3,7 @@ using Spotify.Application;
 using Spotify.Application.Common.Mappings;
 using Spotify.Application.Interfaces;
 using Spotify.Persistence;
+using Spotify.WebApi.Middleware;
 
 namespace Spotify.WebApi;
 
@@ -30,6 +31,8 @@ public class Startup(IConfiguration configuration)
                 policy.AllowAnyOrigin();
             });
         });
+
+        services.AddSwaggerGen();
     }
 
     public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,8 +42,11 @@ public class Startup(IConfiguration configuration)
             app.UseDeveloperExceptionPage();
         }
 
+        app.UseCustomExceptionHandler();
         app.UseRouting();
         app.UseHttpsRedirection();
+        app.UseSwagger();
+        app.UseSwaggerUI();
         app.UseCors("AllowAll");
 
         app.UseEndpoints(endpoints =>

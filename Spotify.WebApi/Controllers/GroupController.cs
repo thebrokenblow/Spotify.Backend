@@ -10,16 +10,18 @@ using Spotify.Application.Groups.Commands.CreateGroup;
 namespace Spotify.WebApi.Controllers;
 
 [Route("[controller]")]
-public class GroupController : BaseController
+public class GroupController(IMapper mapper) : BaseController
 {
-    private readonly IMapper _mapper;
-
-    public GroupController(IMapper mapper) => _mapper = mapper;
-
     [HttpGet]
-    public async Task<ActionResult<GroupListVM>> GetAll(GetGroupListQuery query)
+    public async Task<ActionResult<GroupListVM>> GetAll(int countSkipGroups, int countTakeGroups)
     {
-        var vm = await Mediator.Send(query);
+        var createGroupCommand = new GetGroupListQuery
+        {
+            CountSkipGroups = countSkipGroups,
+            CountTakeGroups = countTakeGroups
+        };
+
+        var vm = await Mediator.Send(createGroupCommand);
         return Ok(vm);
     }
 
@@ -38,7 +40,7 @@ public class GroupController : BaseController
     [HttpPost]
     public async Task<ActionResult<Guid>> Create([FromBody] CreateGroupDto createNoteDto)
     {
-        var command = _mapper.Map<CreateGroupCommand>(createNoteDto);
+        var command = mapper.Map<CreateGroupCommand>(createNoteDto);
         var noteId = await Mediator.Send(command);
         return Ok(noteId);
     }
@@ -46,7 +48,7 @@ public class GroupController : BaseController
     [HttpPut]
     public async Task<IActionResult> Update([FromBody] UpdateGroupDto updateNoteDto)
     {
-        var command = _mapper.Map<UpdateGroupCommand>(updateNoteDto);
+        var command = mapper.Map<UpdateGroupCommand>(updateNoteDto);
         await Mediator.Send(command);
         return NoContent();
     }
